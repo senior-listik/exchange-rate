@@ -1,6 +1,7 @@
+// creating variables
 let data;
 const grid = document.querySelector('.grid');
-const exchangeDate = document.querySelector('.date');
+const exchangeDate = document.querySelector('.header__date');
 const currency1 = document.querySelector('#currency1');
 const amount = document.querySelector('#amount');
 const result = document.querySelector('.result');
@@ -8,22 +9,31 @@ const toggle = document.querySelector('.toggle');
 let rate1;
 let rate2;
 let sum;
+
+// I making a request, get data in JSON format and convert it to JS format
 fetch('https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json')
   .then((response) => response.json())
-  .then((json) => (data = json));
+  .then((json) => { data = json 
 
-setTimeout(function () {
+// setTimeout(function () {
+
+  // iterating over the resulting object
   data.forEach(function (el) {
+
+    // prescribing the layout of the table with data
     let html = `<div class="grid__item">
-        <div class="grid__txt">${el.txt}</div>
-        <div class="grid__rate">${el.rate}</div>
-        <div class="grid__cc">${el.cc}</div>
-        </div>`;
+                  <div class="grid__txt">${el.txt}</div>
+                  <div class="grid__rate">${el.rate}</div>
+                  <div class="grid__cc">${el.cc}</div>
+                </div>`;
     grid.innerHTML += html;
+
+    // adding currency types as options for select
     let option = document.createElement('option');
     option.innerText = el.cc;
     currency1.appendChild(option);
   });
+
   let currency2 = currency1.cloneNode(true);
   currency2.id = 'currency2';
   amount.insertAdjacentElement('beforebegin', currency2);
@@ -60,4 +70,4 @@ setTimeout(function () {
   }
 
   exchangeDate.innerHTML = data[0].exchangedate;
-}, 300);
+});

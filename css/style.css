@@ -1,3 +1,37 @@
+*,*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.header{
+  padding: 20px;
+  background: rgb(46, 45, 45);
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.header__title{
+  color: white;
+
+}
+.fa-magnifying-glass-dollar{
+  margin-right: 10px;
+}
+.header__date{
+  color: white;
+}
+.header__link{
+  color: white;
+  text-decoration: none;
+}
+.fa-brands{
+  color: white;
+  font-size: 20px;
+  margin-left: 10px;
+}
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -16,14 +50,22 @@
   text-align: center;
 }
 .wrapper {
+  padding: 20px;
+  background-color: rgb(122, 122, 122);
   display: flex;
   gap: 10px;
+  align-items: center;
 }
 
 #amount {
+  height: 30px;
+  padding: 0 5px;
+  font-size: 15px;
   order: 2;
 }
 .result {
+  color: white;
+
   order: 5;
 }
 #currency1 {

@@ -1,24 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="css/style.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./libs/fontawesome/css/all.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>TASK_19</title>
 </head>
-
 <body>
-    <div class="date"></div>
+    <header class="header">
+        <h1 class="header__title"><i class="fa-solid fa-magnifying-glass-dollar"></i>Курс валют</h1>
+        <div class="header__date"></div>
+        <a href="https://github.com/senior-listik" class="header__link">Max Lystopadov<i class="fa-brands fa-github"></i></a>
+    </header>
+    
     <div class="wrapper">
 
-        <input type="text" id="amount" />
-        <span class="result"></span>
+        <input type="text" id="amount" placeholder="Введіть суму"/>
+        <div class="result"></div>
         <select class="currency" id="currency1"></select>
         <button class="toggle">toggle</button>
     </div>
     <div class="grid"></div>
 
-    <script src="js/main.js"></script>
+    <script src="./js/main.js"></script>
 </body>
 
 </html>
