@@ -1,0 +1,131 @@
+*,
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+.header {
+    padding: 20px;
+    background: rgb(46, 45, 45);
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    position: relative;
+    &__title {
+        color: white;
+    }
+    &__date {
+        color: rgb(240, 115, 5);
+    }
+    &__link {
+        color: white;
+        text-decoration: none;
+    }
+    & a{
+        position: absolute;
+        right: 20px;
+    }
+}
+
+.fa-solid {}
+
+.fa-magnifying-glass-dollar {
+    margin-right: 10px;
+    color: rgb(240, 115, 5)
+}
+
+.fa-brands {
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.fa-github {}
+
+.calculation {
+    padding: 20px;
+    background-color: rgb(122, 122, 122);
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    
+
+    &__selects {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        select{
+            height: 30px;
+        }
+    }
+
+    &__currency {}
+
+    &__inputs {
+        // display: flex;
+        // flex-direction: column;
+        // gap: 10px;
+    }
+
+    &__result {
+        height: 30px;
+        width: 200px;
+        background: white;
+        font-weight: 700;
+        color: rgb(240, 115, 5);
+        padding: 0 5px;
+        font-size: 15px;
+        display: flex;
+        align-items: center;
+    }
+
+    &__btn {}
+
+    &__toggle {
+        padding: 5px;
+    }
+}
+#amount {
+    width: 200px;
+    height: 30px;
+    padding: 0 5px;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+#currency1 {
+    order: 1;
+}
+
+#currency2 {
+    order: 2;
+}
+.order1 {
+    order: 1 !important;
+}
+
+.order2 {
+    order: 2 !important;
+}
+.fa-right-left {}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    &__item{
+        border: 1px solid black;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+    }
+    &__txt{
+        width: 40%;
+    }
+    &__rate{
+        width: 30%;
+        text-align: center;
+    }
+}

@@ -4,8 +4,8 @@ const grid = document.querySelector('.grid');
 const exchangeDate = document.querySelector('.header__date');
 const currency1 = document.querySelector('#currency1');
 const amount = document.querySelector('#amount');
-const result = document.querySelector('.result');
-const toggle = document.querySelector('.toggle');
+const result = document.querySelector('.calculation__result');
+const toggle = document.querySelector('.calculation__toggle');
 let rate1;
 let rate2;
 let sum;
@@ -33,26 +33,30 @@ fetch('https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json')
     option.innerText = el.cc;
     currency1.appendChild(option);
   });
-
+    
+  // loning we get a new "select"
   let currency2 = currency1.cloneNode(true);
   currency2.id = 'currency2';
-  amount.insertAdjacentElement('beforebegin', currency2);
+  currency1.insertAdjacentElement('beforebegin', currency2);
 
+  // adding events
   currency2.addEventListener('change', getRate2);
   currency1.addEventListener('change', getRate1);
   amount.addEventListener('input', getAmount);
   toggle.addEventListener('click', changeOrder);
 
+  // switching "selects"
   function changeOrder() {
-    currency1.classList.toggle('order3');
+    currency1.classList.toggle('order2');
     currency2.classList.toggle('order1');
   }
 
+  // amount calculation
   function getAmount() {
     sum = amount.value * (rate1 / rate2);
     result.innerText = sum;
   }
-
+  // geting the exchange rate according to the second selected currency
   function getRate2() {
     data.forEach(function (el) {
       if (currency2.value === el.cc) {
@@ -60,7 +64,7 @@ fetch('https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json')
       }
     });
   }
-
+  // geting the exchange rate according to the first selected currency
   function getRate1() {
     data.forEach(function (el) {
       if (currency1.value === el.cc) {
@@ -68,6 +72,6 @@ fetch('https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json')
       }
     });
   }
-
+  // adding date
   exchangeDate.innerHTML = data[0].exchangedate;
 });
