@@ -9,17 +9,20 @@ const toggle = document.querySelector('.calculation__toggle');
 let rate1;
 let rate2;
 let sum;
+ let a; // buffer variable
 
 // I making a request, get data in JSON format and convert it to JS format
 fetch('https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json')
   .then((response) => response.json())
   .then((json) => { data = json 
 
-// setTimeout(function () {
+rate1 = data[0].rate;
+    rate2 = data[0].rate;
+    
+
 
   // iterating over the resulting object
   data.forEach(function (el) {
-
     // prescribing the layout of the table with data
     let html = `<div class="grid__item">
                   <div class="grid__txt">${el.txt}</div>
@@ -42,19 +45,27 @@ fetch('https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json')
   // adding events
   currency2.addEventListener('change', getRate2);
   currency1.addEventListener('change', getRate1);
+  currency2.addEventListener('change', getAmount);
+  currency1.addEventListener('change', getAmount);
   amount.addEventListener('input', getAmount);
   toggle.addEventListener('click', changeOrder);
+  toggle.addEventListener('click', getAmount);
+    
 
   // switching "selects"
   function changeOrder() {
-    currency1.classList.toggle('order2');
-    currency2.classList.toggle('order1');
+      currency1.classList.toggle('order2');
+      currency2.classList.toggle('order1');
+   
+      a = rate1;
+      rate1 = rate2;
+      rate2 = a;
   }
 
   // amount calculation
-  function getAmount() {
-    sum = amount.value * (rate1 / rate2);
-    result.innerText = sum;
+    function getAmount() {
+      sum = amount.value * (rate1 / rate2);
+      result.innerText = sum.toFixed(2);
   }
   // geting the exchange rate according to the second selected currency
   function getRate2() {
