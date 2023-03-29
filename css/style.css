@@ -1,0 +1,43 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.grid__item {
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+.grid__txt {
+  width: 40%;
+}
+.grid__rate {
+  width: 30%;
+  text-align: center;
+}
+.wrapper {
+  display: flex;
+  gap: 10px;
+}
+
+#amount {
+  order: 2;
+}
+.result {
+  order: 5;
+}
+#currency1 {
+  order: 1;
+}
+#currency2 {
+  order: 3;
+}
+.toggle {
+  order: 4;
+}
+.order3 {
+  order: 3 !important;
+}
+.order1 {
+  order: 1 !important;
+}
