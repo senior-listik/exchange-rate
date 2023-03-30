@@ -8,6 +8,7 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
 }
 
 .header {
@@ -20,13 +21,32 @@ body {
       -ms-flex-align: center;
           align-items: center;
   gap: 30px;
-  position: relative;
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+}
+@media (max-width: 445px) {
+  .header {
+    gap: 10px;
+    padding: 15px;
+  }
 }
 .header__title {
   color: white;
+  font-size: 2rem;
+}
+@media (max-width: 445px) {
+  .header__title {
+    font-size: 1.4rem;
+  }
 }
 .header__date {
   color: rgb(240, 115, 5);
+}
+@media (max-width: 445px) {
+  .header__date {
+    font-size: 0.7rem;
+  }
 }
 .header__link {
   color: white;
@@ -35,6 +55,16 @@ body {
 .header a {
   position: absolute;
   right: 20px;
+  top: calc(50% - 10px);
+}
+@media (max-width: 600px) {
+  .header a span {
+    display: none;
+  }
+}
+
+.hide {
+  display: block;
 }
 
 .fa-magnifying-glass-dollar {
@@ -49,7 +79,7 @@ body {
 }
 
 .calculation {
-  padding: 20px;
+  padding: 87px 20px 10px;
   background-color: rgb(122, 122, 122);
   display: -webkit-box;
   display: -ms-flexbox;
@@ -61,6 +91,16 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  -webkit-box-shadow: 0px 2px 3px 1px rgba(0, 0, 0, 0.39);
+          box-shadow: 0px 2px 3px 1px rgba(0, 0, 0, 0.39);
+}
+@media (max-width: 445px) {
+  .calculation {
+    padding-top: 66px;
+  }
 }
 .calculation__selects {
   display: -webkit-box;
@@ -129,6 +169,17 @@ body {
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  padding-top: 167px;
+}
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 445px) {
+  .grid {
+    padding-top: 146px;
+  }
 }
 .grid__item {
   border: 1px solid black;

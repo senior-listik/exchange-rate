@@ -6,6 +6,7 @@
 }
 body {
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
 }
 .header {
     padding: 20px;
@@ -13,13 +14,29 @@ body {
     display: flex;
     align-items: center;
     gap: 30px;
-    position: relative;
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+    // position: relative;
+    @media(max-width: 445px){
+        // flex-direction: column;
+        gap: 10px;
+        // align-items: start;
+        padding: 15px;
+    }
     &__title {
         color: white;
+        font-size: 2rem;
+        @media(max-width: 445px) {
+            font-size: 1.4rem;
     }
+}
     &__date {
         color: rgb(240, 115, 5);
+    @media(max-width: 445px) {
+        font-size: 0.7rem;
     }
+}
     &__link {
         color: white;
         text-decoration: none;
@@ -27,9 +44,18 @@ body {
     & a{
         position: absolute;
         right: 20px;
+        top: calc(50% - 10px);
+        span{
+            @media (max-width: 600px) {
+                    display: none;
+                }
+        }
+        
     }
 }
-
+.hide{
+    display: block;
+}
 .fa-solid {}
 
 .fa-magnifying-glass-dollar {
@@ -46,13 +72,19 @@ body {
 .fa-github {}
 
 .calculation {
-    padding: 20px;
+    padding: 87px 20px 10px;
     background-color: rgb(122, 122, 122);
     display: flex;
     gap: 10px;
     align-items: center;
     justify-content: center;
-    
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    box-shadow: 0px 2px 3px 1px rgb(0 0 0 / 39%);
+    @media(max-width: 445px){
+        padding-top: 66px;
+    }
 
     &__selects {
         display: flex;
@@ -115,6 +147,13 @@ body {
 .grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    padding-top: 167px;
+    @media(max-width: 600px){
+        grid-template-columns: 1fr;
+    }
+        @media(max-width: 445px) {
+            padding-top: 146px;
+        }
     &__item{
         border: 1px solid black;
         display: flex;
