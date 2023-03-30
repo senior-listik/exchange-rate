@@ -63,10 +63,6 @@ body {
   }
 }
 
-.hide {
-  display: block;
-}
-
 .fa-magnifying-glass-dollar {
   margin-right: 10px;
   color: rgb(240, 115, 5);

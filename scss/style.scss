@@ -17,11 +17,8 @@ body {
     position: fixed;
     z-index: 2;
     width: 100%;
-    // position: relative;
     @media(max-width: 445px){
-        // flex-direction: column;
         gap: 10px;
-        // align-items: start;
         padding: 15px;
     }
     &__title {
@@ -53,10 +50,6 @@ body {
         
     }
 }
-.hide{
-    display: block;
-}
-.fa-solid {}
 
 .fa-magnifying-glass-dollar {
     margin-right: 10px;
@@ -68,8 +61,6 @@ body {
     font-size: 20px;
     margin-left: 10px;
 }
-
-.fa-github {}
 
 .calculation {
     padding: 87px 20px 10px;
@@ -95,14 +86,6 @@ body {
         }
     }
 
-    &__currency {}
-
-    &__inputs {
-        // display: flex;
-        // flex-direction: column;
-        // gap: 10px;
-    }
-
     &__result {
         height: 30px;
         width: 200px;
@@ -114,8 +97,6 @@ body {
         display: flex;
         align-items: center;
     }
-
-    &__btn {}
 
     &__toggle {
         padding: 5px;
@@ -142,7 +123,6 @@ body {
 .order2 {
     order: 2 !important;
 }
-.fa-right-left {}
 
 .grid {
     display: grid;
